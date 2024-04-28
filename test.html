@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <title>Demo of JavaScript listbox validation in a form</title>
+        <link rel="stylesheet" href="test.css" />
+        <script type="text/javascript">
+            function data_check()
+            {
+                const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+                var firstName = document.getElementById('fname').value;
+                var lastName = document.getElementById('lname').value;
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+                var confirmPassword = document.getElementById('confirmPassword').value;
+                var userName = document.getElementById('uname').value;
+                var email = document.getElementById('email').value;
+                if (firstName === '' || lastName === '' || email === '' || password === '' ||
+                confirmPassword === '' || userName === '')
+                {
+                    alert('All fields must be filled out');
+                    return false;
+                }
+                if (!passwordRegex.test(password)) 
+                {
+                    alert("Invalid password format")
+                    return false;
+                } 
+                if (password !== confirmPassword) 
+                {
+                    alert('Passwords do not match');
+                    return false;
+                }
+                var str=document.getElementById("l1").value;
+                if(str.length <=0)
+                {
+                    alert("Please select one option ");
+                }
+                else
+                {
+                    //document.forms['drop_list'].submit();// working
+                    const male = document.querySelector('.male');
+                    const female = document.querySelector('.female');
+                    if(!male.checked && !female.checked)
+                    {
+                        alert('Please choose your Gender: Male or Female ')
+                    }
+                    else
+                    {
+                        alert('Form submitted!')
+                    }
+                }
+                return true;
+            }
+                
+
+        </script>
+    </head>
+<body>
+    <video id="background-video" autoplay loop muted poster="./images/home-background.jpeg">
+        <source src="./videos/background-vid.mp4" type="video/mp4">
+    </video>
+    <nav>
+        <ul>
+          <li>
+           <a href="test.html">Sign Up</a>
+          </li>
+          <li>
+            <a href="http://localhost:3000/">Main</a>
+          </li>
+          <li>
+            <a href="home.html">Home</a>
+          </li>
+          <li>
+            <a href="quiz.html">Quiz</a> 
+          </li>
+          <li>
+            <a href="Survey.html">Survey</a>
+          </li>
+          <li>
+            <a href="Survey.html">Survey</a>
+          </li>
+        </ul>
+      </nav>
+    <br>
+    <form name="drop_list" method="post" id='f1'class="form" style="background-color:#E6E6FA">
+        <div class="form-control">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="Enter first name" />
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="Enter last name" />
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="uname">Username</label>
+            <input type="text" id="uname" placeholder="Enter username" />
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Enter email" />
+            <small>Error message</small>
+        </div>
+        <div class="formdivider">
+            <label for="class"><b>Gender:</b></label>
+            <input type="radio" class="male" name="gender" value="Male"> Male 
+            <input type="radio" class="female" name="gender" value="Female"> Female 
+        </div><br>
+        <div class="form-control">
+            <label for="class"><b>Date of Birth:</b></label>
+            <input type="date"name="dt">
+        </div>
+        <div class="form-control">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-control">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <div class="form-control">
+            <fieldset>
+                <legend>Address:</legend>
+                <label for="saddr">Street Address 1:</label>
+                <input type="text" id="fname" name="saddr">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city">
+                <label for="postal">Postal code:</label>
+                <input type="text" id="pc" name="Postal">
+                <label for="place">Place</label>
+                <select id="l1" name="Category">
+                    <option value=''>Select One</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="cbe">Coimbatore</option>
+                    <option value="mad">Madurai</option>
+                    <option value="tri">Trichy</option>
+                </select>
+            </fieldset>
+        </div>
+        <div class="formdivider">
+           
+        </div>
+        <input onclick="data_check()"; value="Submit Form" type="button">
+    </form>
+</body>
+</html>

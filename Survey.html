@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <style>
+        .heading{
+            color:black;
+            text-align: center;
+            position: relative;
+            left:215%;
+            margin-top: 25px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+           
+            background-size: cover;
+            height:750px;
+            max-width: fit-content;
+            background-position: center;
+            background-color:rgba(0,0,0,1);
+        }
+        body::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0,)0.1;
+        }
+        section{
+            justify-content: center;
+        }
+
+        form {
+            position: relative;
+            left: 46%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0,);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: -10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 2px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            left:37%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        section{
+            display:flex;
+            position: relative;
+            left:170%;  
+        }
+        nav {
+            max-width: 960px;
+            mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #d52e2e 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+            padding: 60px 0;
+            position: fixed;
+            top: -80px; 
+            margin-left: 600px;
+            height: 100px;
+        }
+
+        nav ul {
+            text-align: center;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            padding: 18px;
+            font-family: "Open Sans";
+            text-transform:uppercase;
+            color: rgba(0, 0, 0);
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(0, 35, 122, 0.7);
+        }
+        #background-video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+    </style>
+   
+</head>
+<body>
+    <video id="background-video" autoplay loop muted poster="./images/home-background.jpeg">
+        <source src="./videos/background-vid.mp4" type="video/mp4">
+    </video>
+    <nav>
+        <ul>
+          <li>
+           <a href="test.html">Sign Up</a>
+          </li>
+          <li>
+            <a href="http://localhost:3000/">Main</a>
+          </li>
+          <li>
+            <a href="home.html">Home</a>
+          </li>
+          <li>
+            <a href="quiz.html">Quiz</a> 
+          </li>
+          <li>
+            <a href="Survey.html">Survey</a>
+          </li>
+          <li>
+            <a href="feedback.html">Feedback</a>
+          </li>
+        </ul>
+      </nav>
+      <br>
+      <br>
+      <div>
+        <h1 class="heading">Citizenship Survey</h1>
+        </div>
+    <div>
+    <section class="fields">
+    <form action="#" method="post">
+        <label for="name">First Name:</label><br>
+        <input type="text" id="'name" name="name" required><br>
+
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="'lname" name="lname" required><br>
+
+        <label for="pob">Place of Birth:</label><br>
+        <input type="text" id="'pob" name="pob" required><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="'text" id="email" name="email"><br>
+        
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" required><br>
+
+        <label for="occupation">Occupation:</label><br>
+        <input type="'text" id="occupation" name="occupation" required><br>
+
+        <label for="country">Country:</label><br>
+        <input list="countries" id="country" name="country">
+              <datalist id = "countries">
+                    <option value="india">
+                    <option value="srilanka">
+                    <option value="nepal">
+                    <option value="pakistan">
+              </datalist>
+              
+        <label for="edu">Educational Qualification:</label><br>
+        <input list="eduqual" id="edu" name="edu">
+              <datalist id = "eduqual">
+                    <option value="10th cleared">
+                    <option value="12th cleared">
+                    <option value="Bachelors">
+                    <option value="Masters">
+                    <option value="PHD">
+                    <option value="None of these">
+              </datalist>
+
+        <label for="gid">Government ID:</label><br>
+        <input type="'text" id="gid" name="gid" required><br>
+
+        <button type="submit">Register</button>
+    </form>
+    </section>
+    </div>
+</body>
+</html>
